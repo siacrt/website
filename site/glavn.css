@@ -1,0 +1,1336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #fff; /*цвет текста белый*/
+    font-size: 16px;
+    background: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+/*градиент*/
+.wrapper {
+
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(38,28,12,1) 94%);
+    background-attachment: fixed;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/*отспуты по бокам*/
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+/*шапка, внуриенние отступы сверху и  снизу*/
+header {
+    padding: 50px 0;
+}
+
+/*логотип*/
+header .logo{
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+    padding-left: 50px; /*отступ слева для лого */
+}
+
+/*навигация будет по правой стороне*/
+header nav {
+    padding-right: 50px;/*отступ справа для шапки */
+    float: right;
+    width: 50%;
+}
+
+/*удаляем отображение списка, метод флекс и расположение по всему пространству*/
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+
+/*обращаемся к каждому конктреному элементу, говорим что будет распологаться в строчном блоке 
+нужно для того, чтобы можно было добавитьь отступы*/
+header nav ul li {
+    display: inline-block;
+}
+
+/*текст ссылко будет белый*/
+header nav ul li a {
+    color: #fff
+}
+
+header nav ul li:not(.active):not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #DC7000;
+}
+
+/*к какому либо активному элементу */
+header nav ul li.active::after {
+    content: ' ';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #DC7000;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+    left: -15px;
+}
+
+/*эффект при наведении, будет обводка снизу*/
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #DC7000;
+}
+
+/*обращаемся к кнопке, внутренние отступы, скругление углов, плавный переход*/
+header nav ul li.btn a,
+.email .block button {
+    background: #FA9021;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 50ms ease;
+}
+
+/*эффект при наведении*/
+header nav ul li.btn a:hover,
+.email .block button:hover
+, .text-content .btn:hover {
+    background: #a02604;
+}
+
+/*новая часть*/
+
+.hero {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero--info {
+    width: 530px;
+    padding-top: 70px;
+}
+
+.hero--info h2 {
+    color: #E87D0E;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.hero--info p {
+    font-weight: 500;
+    line-height: 170%;
+    margin: 30px 0;
+}
+
+.hero--info .btn, .hero-about .info .btn {
+    background: #FA8305;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 17px;
+}
+
+.hero--info .btn:hover, .hero-about .info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*18.01.2025 +допы были выше*/
+
+.hero img {
+    position: absolute;
+    top: -150px;
+    right: 0;
+}
+
+/*18.01.2025 Секция с играми*/
+.trending {
+    padding-top: 50px;
+}
+
+/*жирность и размер шрифта*/
+.trending h3 {
+    font-weight: 600;
+    font-size: 31px;
+}
+
+.trending .see-all, .project .see-all {
+    color: #fff;
+    background: #25211D;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: right;
+    display: block; /*для того, чтобы точно был блочный элемент*/
+    transform: all 500ms ease;
+}
+
+.project .see-all {
+    float: none;
+}
+
+/*эффект при наведении на кнопку-увеличение на 10%*/
+.trending .see-all:hover, .project .see-all {
+    transform: scale(1.1);
+}
+
+.trending .games {
+    display: flex;/*сами можем описывать как будут располагаться объекты на странице*/
+    justify-content: space-between; /*растягиваем на всю ширину*/
+    width: 100%; /*ширина блока 100%*/
+    padding: 50px 0;
+}
+
+/*сделаем надписи под картинкой*/
+.trending .games span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*исправим картинку огонька*/
+.trending .games span img {
+    position: relative;
+    top: 5px;
+    margin-right: 7px;
+}
+
+.big-text {
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    width: 800px;
+}
+
+.banner {
+    padding: 80px 0;
+}
+
+.banner h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner p {
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 600px;
+}
+
+.banner img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/*01.02.2025*/
+
+/*Секция с изображением*/
+
+.features {
+    background: url('/img/BG.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.features h3,
+.features p {
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.features h3{
+    font-size: 30px;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 20%;
+    margin: 30px 2%;
+}
+
+.features .info .block img {
+    margin-bottom: 15px;
+}
+
+.project {
+    padding: 100px 0;
+}
+
+.project h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.project p {
+    margin: 40px;
+    text-align: center;
+}
+.project .images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.project .see-all {
+    float: none;
+    width: 60px;
+    text-align: center;
+    margin: auto;
+}
+
+/*08.02.2025*/
+
+/*Нижняя часть*/
+
+.email {
+    padding-bottom: 120px;
+}
+
+.email h3{
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.email .block {
+    background: #1C140F;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email .block h4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+    text-align: left; /*Добавить*/
+    margin-left: 5px; /*Добавить*/
+}
+
+.email .block input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 380px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -100px;
+    z-index: 1;
+    padding-right: 120px;
+}
+
+.email .block input::placeholder {
+    color: #898989;
+}
+
+.email .block button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+/* Footer*/
+
+footer {
+    background: #000;
+    padding: 50px 0;
+}
+
+footer .blocks .logo {
+    text-transform: uppercase;
+    font-size: 29px; 
+    font-weight: 800;
+}
+
+footer .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .blocks p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+footer .blocks h4 {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+footer .blocks ul {
+    list-style: none;
+}
+
+footer .blocks ul li {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+footer hr {
+    margin:  30px 0;
+    border: 0;
+    height: 0.6px;
+    background: #ccc;
+}
+
+footer > p {
+    text-align: center;
+}
+
+/*15.02.2025*/
+
+/*Страница про нас*/
+.hero-about {
+    position: relative;
+}
+
+.hero-about .info {
+    width: 600px;
+    padding: 200px 0;
+}
+
+.hero-about .info p {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.hero-about .info h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.hero-about .info .btn {
+    margin-top: 20px;
+}
+
+.hero-about img {
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+
+.work {
+    padding: 80px 0;
+}
+
+.work h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.work .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.work .blocks .block {
+    width: 25%;
+    border-radius: 10px;
+    padding: 50px 35px;
+    background: #1C140F;
+}
+
+.work .blocks .block h3 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.work .blocks .block .badge {
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+
+.work .blocks .block .badge.purple {
+    background: #560F67;
+}
+
+.work .blocks .block .badge.brown {
+    background: #31190D;
+}
+
+.work .blocks .block .badge.green {
+    background: #192a1d;
+}
+
+
+
+/*22.02.2025*/
+
+/* Верхняя часть */
+
+.top-section {
+    background-color: #1C140F; 
+    background-size: cover;
+    padding: 80px 10%;
+    display: flex;
+    padding-top: 100px ;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.top-section .text {
+    max-width: 700px;
+    padding-right: 100px;
+}
+
+.top-section .text h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.top-section .text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.top-section img {
+    max-width: 800px;
+    height: auto;
+    padding-right: 200px;
+}
+
+
+/* Нижняя часть */
+
+.bottom-section {
+    margin-top: 50px;
+    padding-top: 0; 
+    padding-left: 60px;
+}
+
+.bottom-section h2 {
+    text-align: left; /* Выравнивание заголовка влево */
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Уменьшен gap для более компактного вида */
+}
+
+.team-member {
+    background-color: #1C140F;
+    border-radius: 12px;
+    padding: 30px; /* Увеличен padding внутри карточек */
+    text-align: center;
+    width: 180px; /* Немного увеличен размер карточки */
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.05); /* Эффект увеличения при наведении */
+}
+
+.team-member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 14px;
+}
+
+/*страница контакты*/
+
+.hero-contacts h1{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 33px;
+}
+.hero-contacts p {
+    text-align: center;
+}
+
+.hero-contacts img {
+    width: 70%;
+    margin: 80px 15%;
+}
+
+.feedback {
+    padding: 70px 0;
+    background: #1C140F;
+}
+
+.feedback h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.feedback p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feedback form {
+    margin: 80px auto;
+    width: 600px;
+}
+
+.feedback form .inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback form .inline > div {
+    width: 50%;
+}
+
+.feedback form label {
+    color: #4F4F4F;
+    font-size: 14px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    background: #2C2420;
+    border-radius: 10px;
+    border: 0.6 solid #CECECE;
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    outline: none;
+    color: #fff;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.feedback form .one-line {
+    width: 96%;
+}
+
+.feedback form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.feedback form button {
+    background: #DC7000;
+    border-radius: 5px;
+    border: none;
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    padding: 15px 35px;
+    transition: all 500ms ease;
+}
+
+.feedback form button:hover {
+    background: #942f2f;
+}
+
+.services h1{
+    text-align: center;
+    font-size: 33px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.services p {
+    text-align: center;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+/*portfolio*/
+
+.label h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 33px;
+}
+.label p {
+    text-align: center;
+}
+
+.container {
+    padding: 30px 0;
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C140F;
+    padding: 50px 100px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-box {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Центрируем содержимое */
+    text-align: center;
+    position: relative;
+    padding: 0 100px; /* Добавляем отступы, чтобы элементы не прижимались к разделительным линиям */
+}
+
+.stat-box img {
+    width: 60px;
+    height: 60px;
+    background-color: #FBE8DB;
+    border-radius: 50%;
+    padding: 12px;
+    margin: 0 20px
+}
+
+.stat-box .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Выравнивание текста по центру */
+}
+
+.stat-box p {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.stat-box span {
+    font-size: 16px;
+    color: #B3A9A1;
+}
+
+/* Разделительные линии */
+.stat-box:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100px;
+    width: 2px;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+.portfolio {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 50px; /* Расстояние между картинкой и текстом */
+     /* Отступы от края страницы: 50px сверху/снизу, 100px слева/справа */
+    flex-direction: row-reverse; /* Картинка справа, текст слева */
+}
+
+.portfolio img {
+    max-width: 40%; /* Картинка займет максимум 40% ширины */
+    height: auto;
+    padding-right: 40px;
+}
+
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* Текст может расширяться */
+    max-width: 400px; /* Ограничиваем ширину текста */
+    padding-right: 250px;
+}
+
+.portfolio-item h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.portfolio-item p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item img {
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+}
+
+
+
+.blocks-info-pr {
+    padding: 30px 100px;
+    display: flex; /* Располагает элементы в строку */
+    align-items: flex-start; /* Выравнивание по вертикали по центру */
+    justify-content: space-between; /* Распределяет элементы с отступами между ними */
+}
+
+.text-content {
+    max-width: 100%;
+    width: 40%; /* Ограничиваем ширину текста */
+    padding: 0 30px;
+    height: auto;
+}
+
+.text-content h1 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.text-content p {
+    font-weight: 400;
+    font-size: 17px;
+    padding-top: 40px;
+}
+
+.image-content img {
+    max-width: 100%; /* Картинка не будет выходить за пределы контейнера */
+    height: auto; /* Сохраняет пропорции картинки */
+    padding-right: 30px;
+}
+
+.read-more {
+    margin-top: 30px;
+    background-color: #DC7000; /* Цвет фона */
+    color: white; /* Цвет текста */
+    padding: 10px 30px; /* Отступы (сверху/снизу и слева/справа) */
+    border: none; /* Убираем границу */
+    border-radius: 0; /* Скругленные углы */
+    font-size: 16px; /* Размер текста */
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные анимации для фона и масштаба*/ 
+}
+
+.read-more:hover {
+    background-color: #c23f0f; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Немного увеличиваем кнопку при наведении */
+}
+
+.read-more:focus {
+    outline: none; /* Убираем стандартную обводку при фокусе */
+}
+
+.custom-button:active {
+    background-color: #004085; /* Цвет фона при нажатии */
+    transform: scale(0.98); /* Уменьшаем кнопку при нажатии */
+}
+
+
+
+.blocks-info-pr2 {
+    padding: 30px 100px;
+    display: flex; /* Располагает элементы в строку */
+    align-items: flex-start; /* Выравнивание по вертикали по центру */
+    justify-content: space-between; /* Распределяет элементы с отступами между ними */
+}
+
+.text-content2 {
+    max-width: 100%;
+    width: 50%; /* Ограничиваем ширину текста */
+    height: auto;
+    order: 2;
+}
+
+.text-content2 h1 {
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.text-content2 p {
+    font-weight: 400;
+    font-size: 17px;
+    padding-top: 40px;
+}
+
+.image-content2 img {
+    padding-left: 30px;
+    max-width: 100%; /* Картинка не будет выходить за пределы контейнера */
+    height: auto; /* Сохраняет пропорции картинки */
+    order: 1;
+}
+
+.read-more2 {
+    margin-top: 30px;
+    background-color: #DC7000; /* Цвет фона */
+    color: white; /* Цвет текста */
+    padding: 10px 30px; /* Отступы (сверху/снизу и слева/справа) */
+    border: none; /* Убираем границу */
+    border-radius: 0; /* Скругленные углы */
+    font-size: 16px; /* Размер текста */
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: background-color 0.3s, transform 0.2s; /* Плавные анимации для фона и масштаба */
+}
+
+.read-more2:hover {
+    background-color: #c23f0f; /* Цвет фона при наведении */
+    transform: scale(1.05); /* Немного увеличиваем кнопку при наведении */
+}
+
+.read-more2:focus {
+    outline: none; /* Убираем стандартную обводку при фокусе */
+}
+
+.custom-button2:active {
+    background-color: #004085; /* Цвет фона при нажатии */
+    transform: scale(0.98); /* Уменьшаем кнопку при нажати*/
+}
+
+
+
+.testimonials {
+    padding: 50px 0;
+}
+
+.testimonials-text h2 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.testimonials-text p {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.testimonial {
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    border: 2px solid #DDDDDD;
+    font-size: 14px;
+}
+
+.review {
+    padding: 30px 0;
+}
+
+.testimonial.active {
+    background-color: #0F0901;
+    border: 2px solid #DC7000;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile p {
+    font-size: 14px;
+    color: #4F5665;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.info {
+    text-align: left;
+}
+
+.rating {
+    margin-left: auto;
+    color: white;
+}
+
+.rating i {
+    color: orange;
+    margin-left: 5px;
+}
+
+.navigation {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.create-line {
+    width: 45px;
+    border-top: 15px solid orange;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: #DDE0E4;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.arrows {
+    margin-top: -40px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: right;
+}
+
+.arrows button {
+    background-color: transparent;
+    border: 2px solid orange;
+    color: orange;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrows button.next {
+    background-color: orange;
+    color: white;
+    border: none;
+}
+
+/*12.04.2021*/
+
+
+
+.search-bar {
+    background: #1c1b1d;
+    border-radius: 10px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    color: #8b8b8b;
+    margin-bottom: 40px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+
+
+
+.container-news {
+    margin: 0 100px;
+    display: flex;
+    gap: 40px;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin-top: 60px;
+    border-bottom: 1px solid #A5A5A5;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.imgcard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card .author {
+    display: inline-block;
+    font-size: 16px;
+    padding: 4px 10px;
+    margin-right: 10px;
+}
+
+.side-card-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.side-card img {
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.textautor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.side-card .author {
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-right: 10px;
+}
+
+.author.blue {
+    background: #2351F5;
+}
+.author.red {
+    background: #FF8484;
+}
+.author.orange {
+    background: #FF7C32;
+}
+.author.purple {
+    background: #9921C3;
+}
+.author.green {
+    background: #23A54F;
+}
+
+.time {
+    font-size: 16px;
+}
+
+
+
+.card h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card h3 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 17px;
+    margin-top: 10px;
+    line-height: 2;
+}
+
+
+
+
+/*
+.card {
+    background: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin-top: 60px;
+    border-bottom: 1px solid #A5A5A5;
+}
+
+.imgcard {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card .author {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    margin-right: 10px;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.side-card-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.side-card img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.textautor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.side-card .author {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    margin-right: 10px;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.author.blue { background: #1e40af; }
+.author.red { background: #fb923c; }
+.author.green { background: #10b981; }
+.author.purple { background: #a855f7; }
+
+.time {
+    font-size: 12px;
+    color: #c0c0c0;
+}
+
+.card h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.card p {
+    font-size: 15px;
+    color: #fff;
+    line-height: 2,5;
+    margin-right: 10px;
+}
+
+.side-card h3 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 5px;
+}
